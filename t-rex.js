@@ -9,6 +9,8 @@ const hombre = document.getElementById("personaje1")
 const mujer = document.getElementById("personaje2")
 const trofeo = document.querySelector(".trofeo")
 
+const url = window.location.href;
+
 var personaje = false;
 var disfraz = "hombre";
 
@@ -388,6 +390,8 @@ document.addEventListener("click", function(event) {
     punto.style.display = "inline-block"
         
     }else{
+        const url = "file:///D:/T-rex/T-rex/index.html";
+        window.location.href = url + "?puntos=" + puntos;
         music.currentTime = 0;
         velocidad = 3;
         puntos = 0;
@@ -449,3 +453,5 @@ var coin = document.getElementById("coin")
 var music = document.getElementById("music") 
 music.volume = 0.2
     
+
+//Subida de puntos
