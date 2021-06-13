@@ -7,6 +7,7 @@ const burguer = document.getElementById("burguer")
 const burguer2 = document.getElementById("burguer2")
 const hombre = document.getElementById("personaje1")
 const mujer = document.getElementById("personaje2")
+const formulario = document.getElementById("formulario")
 const trofeo = document.querySelector(".trofeo")
 
 const url = window.location.href;
@@ -332,6 +333,7 @@ setInterval(()=> {
 
 setInterval(()=>{
     if(perder == true){
+        formulario.appendChild = "<input type='number' name='puntos' value="+puntos+">"+'<input type="submit" value="Enviar"></input>'
         burguer2.style.setProperty("animation", "none");
          burguer2.style.setProperty("top", "-200px");
          burguer.style.setProperty("animation", "none");
@@ -390,7 +392,7 @@ document.addEventListener("click", function(event) {
     punto.style.display = "inline-block"
         
     }else{
-        const url = "file:///D:/T-rex/T-rex/index.html";
+        const url = "http://localhost:3000/";
         window.location.href = url + "?puntos=" + puntos;
         music.currentTime = 0;
         velocidad = 3;
@@ -455,3 +457,4 @@ music.volume = 0.2
     
 
 //Subida de puntos
+
