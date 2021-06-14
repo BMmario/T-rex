@@ -29,6 +29,7 @@ var puntos = 0;
 const punto = document.getElementById("puntos");
 var contador = false;
 var contador2 = false;
+var form = true;
     
 
 function jump(){
@@ -333,7 +334,25 @@ setInterval(()=> {
 
 setInterval(()=>{
     if(perder == true){
-        formulario.appendChild = "<input type='number' name='puntos' value="+puntos+">"+'<input type="submit" value="Enviar"></input>'
+        if(form == true){
+            formulario.innerHTML +="<label for='puntos'>Puntos</label><br>"
+            formulario.innerHTML +="<input type='number' name='puntos' value="+puntos+"><br>"
+
+            formulario.innerHTML +="<label for='tiempo'>Tiempo</label><br>"
+            formulario.innerHTML += "<input type='number' name='tiempo' value="+tiempo+"><br>"
+            
+            formulario.innerHTML +="<label for='nombre'>Nombre</label><br>"
+            formulario.innerHTML += "<input type='text' name='nombre' placeholder='Nombre'><br>"
+
+            formulario.innerHTML +="<label for='telefono'>Telefono</label><br>"
+            formulario.innerHTML += "<input type='number' name='telefono' placeholder='Telefono'><br>"
+            formulario.innerHTML += "<input type='submit' value='Enviar'>"
+            form = false
+        }
+         
+ 
+
+        
         burguer2.style.setProperty("animation", "none");
          burguer2.style.setProperty("top", "-200px");
          burguer.style.setProperty("animation", "none");
@@ -392,8 +411,7 @@ document.addEventListener("click", function(event) {
     punto.style.display = "inline-block"
         
     }else{
-        const url = "http://localhost:3000/";
-        window.location.href = url + "?puntos=" + puntos;
+        
         music.currentTime = 0;
         velocidad = 3;
         puntos = 0;

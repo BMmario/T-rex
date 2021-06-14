@@ -16,6 +16,19 @@ body{
     
 }
 
+#formulario{
+    
+    display: block;
+    text-align: center;
+    font-size: 150%;
+    font-family:  Helvetica, Arial, sans-serif;
+    color: beige;
+    
+}
+#formulario{
+    margin-top: 10px;
+}
+
 
 #dino{
     width:50px;

@@ -1,0 +1,4 @@
+Nombre: Mario
+    Telefono: 6888
+    Puntos: 2
+    Tiempo: 11
