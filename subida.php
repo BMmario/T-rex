@@ -1,5 +1,8 @@
 <?php
 $escribir = false;
+$crear_primero = false;
+$primero = 0;
+$pos1 = fopen("posicionamiento/pos1.txt", "a+");
 if(isset($_POST['puntos'])  && isset($_POST['tiempo']) ){
     echo "<h1>Tus Datos</h1>";
     echo "<h2> Nombre: ".$_POST['nombre']."</h2>";
@@ -9,30 +12,47 @@ if(isset($_POST['puntos'])  && isset($_POST['tiempo']) ){
     echo "no se ha recibido nada";
 }
 
-if(file_exists("posicionamiento/pos1.txt")){
+if(file_exists("posicionamiento/personal.txt")){
     
     
     
 }else{
     $escribir = true;
-    $pos1 = fopen("posicionamiento/pos1.txt", "a+");
+    $personal = fopen("posicionamiento/personal.txt", "a+");
 }
 
 if($escribir == true){
     
-    fwrite($pos1, "Nombre: ".$_POST['nombre']);
+    fwrite($personal, "Nombre: ".$_POST['nombre']);
     
-    fwrite($pos1, "
+    fwrite($personal, "
     Telefono: ".$_POST['telefono']);
 
-    fwrite($pos1, "
+    fwrite($personal, "
     Puntos: ".$_POST['puntos']);
 
-    fwrite($pos1, "
+    fwrite($personal, "
     Tiempo: ".$_POST['tiempo']);
 
     $escribir = false;
 }
+if($_POST['puntos'] > $primero){
+    fclose($pos1);
+    unlink("posicionamiento/pos1.txt");
+    $crear_primero = true;    
+}
+
+if($crear_primero == true){
+    $pos1 = fopen("posicionamiento/pos1.txt", "a+");
+    $nombre1 = fwrite($pos1, "Nombre: ".$_POST['nombre']);
+    $telefono1 = fwrite($pos1, "
+    Telefono: ".$_POST['telefono']);
+    $puntos1 = fwrite($pos1, "
+    Puntos: ".$_POST['puntos']);
+    $tiempo1 = fwrite($pos1, "
+    Tiempo: ".$_POST['tiempo']);
+}
+
 
 ?>
 
@@ -49,7 +69,7 @@ if($escribir == true){
     <h1>Clasificaciones</h1>
     <div id="clasificaciones">
         <ol>
-            <li>Juan : 30 puntos</li>
+            <li><?php echo $nombre1." : ".$puntos1.", ".$tiempo1; ?></li>
             <li>María : 27 puntos</li>
             <li>Antonio : 25 puntos</li>
             <li>Marcos : 24 puntos</li>
