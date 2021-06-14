@@ -336,10 +336,10 @@ setInterval(()=>{
     if(perder == true){
         if(form == true){
             formulario.innerHTML +="<label for='puntos'>Puntos</label><br>"
-            formulario.innerHTML +="<input type='number' name='puntos' value="+puntos+"><br>"
+            formulario.innerHTML +="<input type='number' name='puntos' value="+puntos+" readonly='readonly'><br>"
 
             formulario.innerHTML +="<label for='tiempo'>Tiempo</label><br>"
-            formulario.innerHTML += "<input type='number' name='tiempo' value="+tiempo+"><br>"
+            formulario.innerHTML += "<input type='number' name='tiempo' value="+tiempo+" readonly='readonly'><br>"
             
             formulario.innerHTML +="<label for='nombre'>Nombre</label><br>"
             formulario.innerHTML += "<input type='text' name='nombre' placeholder='Nombre'><br>"
