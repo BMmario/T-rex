@@ -1,4 +1,4 @@
 Nombre: Mario
-    Telefono: 688950802
-    Puntos: 4
-    Tiempo: 14
+    Telefono: 
+    Puntos: 7
+    Tiempo: 20

@@ -395,7 +395,7 @@ document.addEventListener("keydown", function(event) {
     
 })
 
-document.addEventListener("click", function(event) {
+juego.addEventListener("click", function(event) {
     if(personaje == true){
 
     if(perder == false){
