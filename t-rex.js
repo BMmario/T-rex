@@ -8,7 +8,7 @@ const burguer2 = document.getElementById("burguer2")
 const hombre = document.getElementById("personaje1")
 const mujer = document.getElementById("personaje2")
 const formulario = document.getElementById("formulario")
-const trofeo = document.querySelector(".trofeo")
+/* const trofeo = document.querySelector(".trofeo") */
 
 const url = window.location.href;
 
@@ -342,10 +342,10 @@ setInterval(()=>{
             formulario.innerHTML += "<input type='number' name='tiempo' value="+tiempo+" readonly='readonly'><br>"
             
             formulario.innerHTML +="<label for='nombre'>Nombre</label><br>"
-            formulario.innerHTML += "<input type='text' name='nombre' placeholder='Nombre'><br>"
+            formulario.innerHTML += "<input type='text' name='nombre' placeholder='Nombre' required><br>"
 
             formulario.innerHTML +="<label for='telefono'>Telefono</label><br>"
-            formulario.innerHTML += "<input type='number' name='telefono' placeholder='Telefono'><br>"
+            formulario.innerHTML += "<input type='tel' name='telefono' placeholder='Telefono' required><br>"
             formulario.innerHTML += "<input type='submit' value='Enviar'>"
             form = false
         }
@@ -422,7 +422,8 @@ juego.addEventListener("click", function(event) {
         puntuacion.classList.add("puntuacion");
         derrota.classList.remove("perdiste");
         dino.style.display = "flex"
-        trofeo.classList.remove("perder");
+        document.location.reload();
+        /* trofeo.classList.remove("perder"); */
     }
 }
 

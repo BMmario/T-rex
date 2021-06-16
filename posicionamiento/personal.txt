@@ -1,4 +1,0 @@
-Nombre: Mario
-    Telefono: 
-    Puntos: 7
-    Tiempo: 20
