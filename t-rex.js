@@ -8,7 +8,7 @@ const burguer2 = document.getElementById("burguer2")
 const hombre = document.getElementById("personaje1")
 const mujer = document.getElementById("personaje2")
 const formulario = document.getElementById("formulario")
-/* const trofeo = document.querySelector(".trofeo") */
+ const trofeo = document.querySelector(".trofeo") 
 
 const url = window.location.href;
 
@@ -197,10 +197,10 @@ let estaVivo = setInterval(function(){
         derrota.classList.remove("derrota");
         derrota.classList.add("perdiste");
         trofeo.classList.add("perder");
-        punto.style.setProperty("top", "32px"); 
+        punto.style.setProperty("display", "none"); 
         punto.style.setProperty("left", "172px"); 
-        puntuacion.style.setProperty("top", "65px"); 
-        puntuacion.style.setProperty("left", "100px"); 
+        puntuacion.style.setProperty("display", "none"); 
+        puntuacion.style.setProperty("display", "none"); 
     }
     
 }, 10);
@@ -423,11 +423,18 @@ juego.addEventListener("click", function(event) {
         derrota.classList.remove("perdiste");
         dino.style.display = "flex"
         document.location.reload();
-        /* trofeo.classList.remove("perder"); */
+         trofeo.classList.remove("perder"); 
+         
     }
 }
 
+
 })
+
+if(perder == true){
+    punto.style.display("none");
+    puntuacion.style.display("none");
+}
 
 juego.onmousedown = function(){
     jump()

@@ -1,13 +1,19 @@
 body{
     background: rgb(223, 104, 50);
+    top: 50%;
 }
 #juego{
+    position: absolute;
     width: 600px;
     height:200px;
     border: 1px solid black;
     margin: auto ;
     overflow: hidden;
-    
+    margin-top: auto;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -300px;
+    right: 50%;
     justify-content:center;
     align-content: center;
     touch-action: manipulation;
@@ -18,12 +24,14 @@ body{
 
 #formulario{
     
-    display: block;
+   
     text-align: center;
-    font-size: 150%;
+    font-size: 120%;
     font-family:  Helvetica, Arial, sans-serif;
     color: beige;
-    
+    position: relative;
+    top:-1388px;
+    left: -150px;
 }
 #formulario{
     margin-top: 10px;
@@ -138,7 +146,7 @@ body{
     background-image: url(./assets/perdiste.png);
 
     position: relative;  
-    top: -1114px;
+    top: -1117px;
 }
 .perder{
     width: 120px;
@@ -177,8 +185,8 @@ body{
     cursor: pointer;
     width: 400px;
     height: 330px;
-    top: -105px;
-    margin-top: -65px;
+    top: -90px;
+    margin-top: -55px;
     
 }
 .disfrazoff{
